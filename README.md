@@ -88,3 +88,6 @@ Note that the last line explicitely includes the bundled *index.js* that webpack
 - Deploy your function using az cli or the extension.
 - Now you need the repository for which staticman should generate pull requests (e.g. github-pages repository). Set it up and create an appropriate **staticman.yml** according to the [staticman doc](https://staticman.net/docs/configuration) or look at a sample config.
 - You can test your function with postman by making a request to **function-app-name.azurewebsites.net/api/functionname** with, for example a your appropriate payload that you specified in **staticman.yml**. Note that if you made your **function.json > authLevel** to "function", you need to send an additional HTTP Header **x-functions-key = YOUR_SECRET_FUNCTIONKEY**.
+
+# TODO
+Would probably be better to not clone the staticman source but to use the npm package. Might do this if I need the maintenance benefit.
