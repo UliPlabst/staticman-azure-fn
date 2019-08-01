@@ -1,7 +1,7 @@
 'use strict'
 
 const path = require('path')
-const config = require(path.join(__dirname, '/../config'))
+const config = require('../config')
 const errorHandler = require('../lib/ErrorHandler')
 const reCaptcha = require('express-recaptcha')
 const Staticman = require('../lib/Staticman')

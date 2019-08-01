@@ -1,7 +1,7 @@
 'use strict'
 
 const path = require('path')
-const config = require(path.join(__dirname, '/../config'))
+const config = require('../config')
 
 const Notification = function (mailAgent) {
   this.mailAgent = mailAgent

@@ -132,7 +132,7 @@ try {
 
   const fileName = 'config.' + config.get('env') + '.json'
 
-  config.loadFile(path.join(__dirname, fileName))
+  config.loadFile(path.join("./", fileName))
   config.validate()
 
   console.log('(*) Local config file loaded')
