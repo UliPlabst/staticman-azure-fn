@@ -53,24 +53,25 @@ export async function handler(context, req, params: IHandlerParams): Promise<IRe
     try
     {
       let captchaValid = await checkRecaptcha(staticman, req) //captchaValid returns false if not configured, throws if captcha is invalid
-      let fields  = req.body.fields
-      let options = req.body.options
-  
-      let data = await staticman.processEntry(fields, options)
-      return {
-        status: 200,
-        body: {
-          success: true,
-          data: data
-        },
-        headers: {
-          "Content-Type": "application/json",
-        }
-      }
     }
     catch(error)
     {
       return errorResponse(403, `invalid-captcha, reason: ${error.message}`)
+    }
+    
+    let fields  = req.body.fields
+    let options = req.body.options
+
+    let data = await staticman.processEntry(fields, options)
+    return {
+      status: 200,
+      body: {
+        success: true,
+        data: data
+      },
+      headers: {
+        "Content-Type": "application/json",
+      }
     }
   }
   catch(error)
