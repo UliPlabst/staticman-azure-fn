@@ -1,4 +1,4 @@
-import * as Staticman from './lib/Staticman'
+import Staticman from "./lib/Staticman";
 import { checkRecaptcha } from "./controllers/process"
 
 interface IHandlerParams {
