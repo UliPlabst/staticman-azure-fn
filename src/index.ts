@@ -70,7 +70,7 @@ export async function handler(context, req, params: IHandlerParams): Promise<IRe
     }
     catch(error)
     {
-      return errorResponse(403, "invalid-captcha")
+      return errorResponse(403, `invalid-captcha, reason: ${error.message}`)
     }
   }
   catch(error)
