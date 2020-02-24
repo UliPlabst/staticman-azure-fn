@@ -1,4 +1,4 @@
-import Staticman from "./lib/Staticman";
+import  Staticman  from "./lib/Staticman";
 import { checkRecaptcha } from "./controllers/process"
 
 interface IHandlerParams {
@@ -42,7 +42,7 @@ export async function handler(context, req, params: IHandlerParams): Promise<IRe
       return errorResponse(400, "No body")
     }
 
-    const staticman = new Staticman(params);
+    const staticman = await new Staticman(params);
     staticman.setConfigPath();
     (req as any).connection = {                   //staticman wants to have this connection property, I will give it to him
       remoteAddress: req.headers["client-ip"]
@@ -56,7 +56,7 @@ export async function handler(context, req, params: IHandlerParams): Promise<IRe
     }
     catch(error)
     {
-      return errorResponse(403, `invalid-captcha, reason: ${error.message}`)
+      return errorResponse(403, `invalid-captcha`)
     }
     
     let fields  = req.body.fields

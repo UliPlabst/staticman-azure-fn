@@ -1,6 +1,6 @@
 {
   "name": "staticman-azure-fn",
-  "version": "1.0.13",
+  "version": "1.0.21",
   "description": "Staticman comment functionality via Azure Function",
   "main": "out/index.js",
   "scripts": {
